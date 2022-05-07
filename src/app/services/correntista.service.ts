@@ -12,4 +12,7 @@ export class CorrentistaService {
   list(): Observable<any> {
     return this.http.get(`${baseURL}/correntistas`);
   }
+  create(correntista:any): Observable<any> {
+    return this.http.post(`${baseURL}/correntistas`,correntista);
+  }
 }
