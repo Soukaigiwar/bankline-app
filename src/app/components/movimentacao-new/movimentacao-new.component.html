@@ -3,10 +3,9 @@
         <h1 class="display-6">Movimentação</h1>
         <p class="lead-1">Inclusão de nova movimentação</p>
         <hr class="my-2">
-        <form class="row g-2">
             <div class="col-md-3">
                 <label for="iData" class="form-label">Data</label>
-                <input type="date" id="iData" class="form-control">
+                <input type="date" [(ngModel)]="dataHora" id="iData" class="form-control">
             </div>
             <div class="col-md-9">
                 <label for="iCorrentista" class="form-label">Correntista</label>
@@ -16,24 +15,22 @@
             </div>
             <div class="col-12">
                 <label for="iDescricao" class="form-label">Descrição</label>
-                <input type="text" class="form-control" id="iDescricao">
+                <input type="text" [(ngModel)]="descricao" class="form-control" id="iDescricao">
             </div>
             <div class="col-md-3">
                 <label for="iTipo" class="form-label">Tipos Movimentação</label>
-                <select id="iTipo" class="form-select">
+                <select id="iTipo" [(ngModel)]="tipo" class="form-select">
                     <option selected>RECEITA</option>
                     <option >DESPESA</option>
                 </select>
             </div>
             <div class="col-md-2">
                 <label for="iValor" class="form-label">R$ Valor</label>
-                <input type="text" class="form-control" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" required/>
+                <input type="text" [(ngModel)]="valor" class="form-control" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" required/>
             </div>
             <div class="d-grid gap-2 d-md-flex">
-                <button class="btn btn-outline-primary me-md-2" type="button">Confirmar</button>
+                <button (click)="save()" class="btn btn-outline-primary me-md-2" type="button">Confirmar</button>
                 <a routerLink="/movimentacoes" class="btn btn-outline-secondary">Cancelar</a>
-            </div>
-        </form>    
-        
+            </div> 
     </div>
 </div>

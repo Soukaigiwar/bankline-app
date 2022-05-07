@@ -12,4 +12,10 @@ export class MovimentacaoService {
   list(): Observable<any> {
     return this.http.get(`${baseURL}/movimentacoes`);
   }
+  findByIdConta(idConta:any): Observable<any> {
+    return this.http.get(`${baseURL}/movimentacoes/${idConta}`);
+  }
+  create(movimentacao:any): Observable<any> {
+    return this.http.post(`${baseURL}/movimentacoes`, movimentacao);
+  }
 }
