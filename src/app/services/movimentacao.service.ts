@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-const baseURL = 'http://localhost:8080';
+
+// const baseURL = 'http://localhost:8080';
+const baseURL = 'https://shenriqu-bankline-api.herokuapp.com';
 
 @Injectable({
   providedIn: 'root'
